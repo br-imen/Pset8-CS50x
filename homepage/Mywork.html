@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="styles.css" rel="stylesheet">
+  <title>Imen Ben Rhouma</title>
+</head>
+
+<body >
+
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Imen Ben Rhouma</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">About me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Mywork.html" autofocus>My work</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Myresume.html">My resume</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Contact.html">Contact</a>
+      </li>
+    </ul>
+  </header>
+
+  <br>
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4 gy-5">
+      <div class="col">
+        <div class="card h-100">
+          <img src="IMG_0518.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Train</h5>
+            <p class="card-text">We went to Compiégne is a French commune located in the department of Oise, and there was a modal trains exhibition.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 1 month ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="IMG_0512.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Sunset</h5>
+            <p class="card-text">I took this photo on the airplane. Beautiful Sunset.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 2 weeks ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="IMG_9685.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Lego</h5>
+            <p class="card-text">One of my favorite moments: <br>playing lego with my kid.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 6 months ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="card">
+      <div class="card-body">
+          <div class="form-floating mb-3">
+            <input class="form-control" id="nameInput">
+            <label for="nameInput">Name</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="commentBoxValue"
+              style="height: 100px"></textarea>
+            <label for="commentBoxValue">Comment</label>
+          </div>
+          <br>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary btn-lg" id="post" type="submit">Post</button>
+          </div>
+          <br>
+          <hr>
+          <div class="container" id="comment-box">
+            <div style="max-height: 500px; overflow-y: scroll;">
+              <div class="container" id="comments">
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Imen Ben Rhouma - 2023</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var post_submit = document.getElementById("post");
+    post_submit.addEventListener("click", function(){
+      var name = document.getElementById("nameInput").value;
+      var comment = document.getElementById("commentBoxValue").value;
+      if(name && comment){
+        let currentDate = new Date().toLocaleString();
+        var carComment = `<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p>${comment}</p><footer class="blockquote-footer" >${name}<cite title="Source Title"> ${currentDate} </cite></footer></blockquote></div></div>`;
+        console.log(carComment);
+        document.getElementById("comments").insertAdjacentHTML('beforebegin', carComment);
+      }
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+
+#comment-box {
+    margin-bottom: 20px
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+footer > .container {
+
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+
+
+span.fs-4{
+    font-style: italic;
+}
+
+#loadingresume {
+    text-align:center;
+}
+
+.image-caption{
+    text-align:center;
+}
+
+.aboutmeparagraph {
+    text-align: justify;
+    font-size: 1.3em;
+}
